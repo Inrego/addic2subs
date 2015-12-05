@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F280CB31-CF64-4F17-BFD5-A74A680896AD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SubsDownloader</RootNamespace>
+    <AssemblyName>SubsDownloader</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.6\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="NEbml.Core, Version=0.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NEbml.0.1.4\lib\NEbml.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Config.cs" />
+    <Compile Include="Episode.cs" />
+    <Compile Include="Helpers.cs" />
+    <Compile Include="Language.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="Matroska\DefaultElementDescriptorProvider.cs" />
+    <Compile Include="Matroska\EbmlDescriptorProvider.cs" />
+    <Compile Include="Matroska\IElementDescriptorProvider.cs" />
+    <Compile Include="Matroska\MatroskaElementDescriptorProvider.cs" />
+    <Compile Include="Matroska\ReaderExtensions.cs" />
+    <Compile Include="Matroska\SegmentInfoUpdater.cs" />
+    <Compile Include="MediaFile.cs" />
+    <Compile Include="MyWebClient.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ObjectXMLSerializer.cs" />
+    <Compile Include="Processing\FileProcessor.cs" />
+    <Compile Include="Processing\FolderProcessor.cs" />
+    <Compile Include="Processing\QueueProcessor.cs" />
+    <Compile Include="Processing\SubtitleDownloader.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueuedEpisode.cs" />
+    <Compile Include="RlsGrpRelation.cs" />
+    <Compile Include="Websites\Addic7ed\Config.cs" />
+    <Compile Include="Websites\Addic7ed\DownloadableSubtitle.cs" />
+    <Compile Include="Websites\Addic7ed\Episode.cs" />
+    <Compile Include="Websites\Addic7ed\Plugin.cs" />
+    <Compile Include="Websites\Addic7ed\Show.cs" />
+    <Compile Include="Websites\Addic7ed\ShowsCollection.cs" />
+    <Compile Include="Websites\IWebsite.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\SubsDownloader.dll" />
+    <Content Include="bin\Debug\SubsDownloader.pdb" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
