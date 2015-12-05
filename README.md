@@ -1,5 +1,5 @@
 # addic2subs
-Automatic download of subtitles from addic7ed.com as well as a script for Sonarr
+Automatic download of subtitles from addic7ed.com as well as a script for Sonarr for full automation. Made to run on **Windows only**.
 
 Can be configured to check for subtitles every X hours, so you get them even if they're not ready when you got the episode.
 
