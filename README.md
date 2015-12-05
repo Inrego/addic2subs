@@ -4,7 +4,7 @@ Automatic download of subtitles from addic7ed.com as well as a script for Sonarr
 Can be configured to check for subtitles every X hours, so you get them even if they're not ready when you got the episode.
 
 # How to use?
-Unzip the release zip into a folder. Run SonarrScript.exe once to generate config.xml
+Unzip the release zip into a folder (Downloads can be found [here](https://github.com/Inrego/addic2subs/releases/latest)). Run SonarrScript.exe once to generate config.xml
 See more about editing / configuring config.xml at the bottom of this page.
 
 You can drag folders or media files on top of SonarrScript.exe to run it for those files/folders (for example of existing files you have that are missing subtitles). Choosing SonarrScript.exe as Open With on a media file will also work.
