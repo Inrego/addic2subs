@@ -24,9 +24,6 @@ namespace SubsDownloader
         private string _runProgramAfterQueue = "";
         public string RunProgramAfterQueue {get { return _runProgramAfterQueue; } set { _runProgramAfterQueue = value; }}
 
-        private string[] _foldersToScan = new string[0];
-        public string[] FoldersToScan { get { return _foldersToScan; } set { _foldersToScan = value; } }
-
         private string[] _ignoredFiles = new string[0];
         public string[] IgnoredFiles { get { return _ignoredFiles; } set { _ignoredFiles = value; } }
 
