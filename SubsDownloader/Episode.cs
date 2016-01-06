@@ -77,7 +77,7 @@ namespace SubsDownloader
                 Source = Source.Unknown;
             }
 
-            string regex = @"^(?<showName>[a-z0-9\.\-]+).S(?<season>[0-9]+)E(?<episode>[0-9]+).+\.[^\-]*\-(?<groups>[\-a-z0-9]+)";
+            string regex = @"^(?<showName>[a-z0-9\.\-]+)[.\s\-]+S(?<season>[0-9]+)E(?<episode>[0-9]+).+[\.\s][^\-]*\-(?<groups>[\-a-z0-9]+)";
             var regexStandard = new Regex(regex, RegexOptions.IgnoreCase);
             Match episode = regexStandard.Match(fileName);
 
@@ -111,6 +111,9 @@ namespace SubsDownloader
             try
             {
                 Groups = episode.Groups["groups"].Value.Split('-');
+                if (fileName.IndexOf("WEB-DL", StringComparison.InvariantCultureIgnoreCase) > 0 ||
+                    fileName.IndexOf("WEBDL", StringComparison.InvariantCultureIgnoreCase) > 0)
+                    Groups = Groups.Concat(new[] {"WEBDL", "WEB-DL"}).ToArray();
             }
             catch (Exception e)
             {
