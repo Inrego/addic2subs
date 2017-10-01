@@ -32,6 +32,11 @@ namespace SubsDownloader.Processing
         {
             if (!ValidFile)
                 return;
+            if (Episode.Show == null)
+            {
+                Logger.WriteLine($"No show was found on addic7ed with the name {Episode.ShowName}");
+                return;
+            }
             var plugin = new Websites.Addic7ed.Plugin(new[] { Episode });
             var downloadableSubtitles = plugin.GetDownloadLinks();
             bool success;
